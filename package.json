@@ -1,0 +1,17 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "A bank branch search application",
+  "main": "app.js",
+  "dependencies": {
+    "fast-csv": "^2.4.1",
+    "mongoose": "^4.11.11",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nitin Bhapkar",
+  "license": "ISC"
+}
