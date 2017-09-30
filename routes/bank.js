@@ -11,8 +11,8 @@ module.exports = function(router) {
 		        headers: ['ifsc', 'bank_id', 'branch', 'address', 'city', 'district', 'state', 'bank_name']
 		    }
 		}
-		var csvFile = path.normalize(__dirname + '/../bank.csv');
-	  	load.importFile(csvFile, csvHeaders.BANKS.headers, 'bankSchema');
+		//var csvFile = path.normalize(__dirname + '/../bank.csv');
+	  	load.importFile("https://github.com/snarayanank2/indian_banks/blob/master/bank_branches.csv", csvHeaders.BANKS.headers, 'bankSchema');
 	  	return res.json({ success : true, message : 'Bank data loaded into the database' });
 	});
 

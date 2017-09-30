@@ -6,9 +6,10 @@ var router = express.Router();
 var bankRoute = require('./routes/bank')(router);
 var app = express();
 var port = process.env.port || 3000;
+var database = process.env.PROD_MONGODB;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/bankData', { useMongoClient: true }, function(err){
+mongoose.connect(database , { useMongoClient: true }, function(err){
 	if(err){
 		console.log('Error : ', err.message);
 	}
