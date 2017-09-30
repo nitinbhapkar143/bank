@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 var bankRoute = require('./routes/bank')(router);
 var app = express();
-var port = process.env.port || 5000;
+var port = process.env.PORT || 5000;
 var database = process.env.PROD_MONGODB;
 console.log(database);
 
