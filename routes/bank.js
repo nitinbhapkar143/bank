@@ -16,6 +16,21 @@ module.exports = function(router) {
 	  	return res.json({ success : true, message : 'Bank data loaded into the database' });
 	});
 
+	router.get('/getAllBanks', function(req, res){
+		bank.find({ } , { _id : 0 } , function(err, banks){
+			if(err) {
+				return res.json({ success : false, message : err.message});
+			}
+			else if(!banks){
+				return res.json({ success : false, message : 'No banks in the database' });
+			}
+			else{
+				return res.json({ success: true, bank : banks });
+			}
+		});
+
+			});
+
 	router.get('/searchByIFSC/:IFSC', function(req, res){
 		var IFSC = req.params.IFSC;
 		bank.findOne({ ifsc : { $regex : new RegExp(IFSC, "i") } }, { _id : 0 } , function(err, banks){
